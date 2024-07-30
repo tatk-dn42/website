@@ -1,0 +1,395 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.48694,
+                    49.097615
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"#rt0-de\">Falkenstein, DE</a>",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.904139,
+                    52.367573
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"#rt0-nl\">Amsterdam, NL</a>",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    103.819836,
+                    1.352083
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"#rt0-sg\">Singapore, SG</a>",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.127586,
+                    51.507218
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"#rt0-uk\">London, UK</a>",
+                "description": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.005973,
+                    40.712775
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"#rt0-us\">New York City, NY, USA</a>",
+                "description": ""
+            }
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-uk <-> rt0-nl"
+            },
+            "coordinates": [
+                [
+                    -0.127586,
+                    51.507218
+                ],
+                [
+                    4.904139,
+                    52.367573
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-uk <-> rt0-de"
+            },
+            "coordinates": [
+                [
+                    -0.127586,
+                    51.507218
+                ],
+                [
+                    12.48694,
+                    49.097615
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-uk <-> rt0-us"
+            },
+            "coordinates": [
+                [
+                    -0.127586,
+                    51.507218
+                ],
+                [
+                    -74.005973,
+                    40.712775
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-uk <-> rt0-sg"
+            },
+            "coordinates": [
+                [
+                    -0.127586,
+                    51.507218
+                ],
+                [
+                    103.819836,
+                    1.352083
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-nl <-> rt0-uk"
+            },
+            "coordinates": [
+                [
+                    4.904139,
+                    52.367573
+                ],
+                [
+                    -0.127586,
+                    51.507218
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-nl <-> rt0-de"
+            },
+            "coordinates": [
+                [
+                    4.904139,
+                    52.367573
+                ],
+                [
+                    12.48694,
+                    49.097615
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-nl <-> rt0-us"
+            },
+            "coordinates": [
+                [
+                    4.904139,
+                    52.367573
+                ],
+                [
+                    -74.005973,
+                    40.712775
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-nl <-> rt0-sg"
+            },
+            "coordinates": [
+                [
+                    4.904139,
+                    52.367573
+                ],
+                [
+                    103.819836,
+                    1.352083
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-de <-> rt0-uk"
+            },
+            "coordinates": [
+                [
+                    12.48694,
+                    49.097615
+                ],
+                [
+                    -0.127586,
+                    51.507218
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-de <-> rt0-nl"
+            },
+            "coordinates": [
+                [
+                    12.48694,
+                    49.097615
+                ],
+                [
+                    4.904139,
+                    52.367573
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-de <-> rt0-us"
+            },
+            "coordinates": [
+                [
+                    12.48694,
+                    49.097615
+                ],
+                [
+                    -74.005973,
+                    40.712775
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-de <-> rt0-sg"
+            },
+            "coordinates": [
+                [
+                    12.48694,
+                    49.097615
+                ],
+                [
+                    103.819836,
+                    1.352083
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-us <-> rt0-uk"
+            },
+            "coordinates": [
+                [
+                    -74.005973,
+                    40.712775
+                ],
+                [
+                    -0.127586,
+                    51.507218
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-us <-> rt0-nl"
+            },
+            "coordinates": [
+                [
+                    -74.005973,
+                    40.712775
+                ],
+                [
+                    4.904139,
+                    52.367573
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-us <-> rt0-de"
+            },
+            "coordinates": [
+                [
+                    -74.005973,
+                    40.712775
+                ],
+                [
+                    12.48694,
+                    49.097615
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-us <-> rt0-sg"
+            },
+            "coordinates": [
+                [
+                    -74.005973,
+                    40.712775
+                ],
+                [
+                    103.819836,
+                    1.352083
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-sg <-> rt0-nl"
+            },
+            "coordinates": [
+                [
+                    103.819836,
+                    1.352083
+                ],
+                [
+                    4.904139,
+                    52.367573
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-sg <-> rt0-de"
+            },
+            "coordinates": [
+                [
+                    103.819836,
+                    1.352083
+                ],
+                [
+                    12.48694,
+                    49.097615
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-sg <-> rt0-us"
+            },
+            "coordinates": [
+                [
+                    103.819836,
+                    1.352083
+                ],
+                [
+                    -74.005973,
+                    40.712775
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-sg <-> rt0-uk"
+            },
+            "coordinates": [
+                [
+                    103.819836,
+                    1.352083
+                ],
+                [
+                    -0.127586,
+                    51.507218
+                ]
+            ]
+        }
+    ]
+}

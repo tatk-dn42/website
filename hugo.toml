@@ -1,0 +1,21 @@
+baseURL = 'https://tatk.network/'
+languageCode = 'en-gb'
+title = 'TATK DN42 Network'
+
+theme = "bootstrap"
+relativeURLS = true
+enableRobotsTXT = true
+enableGitInfo = false
+
+[module]
+[[module.mounts]]
+    source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+    target = "assets/js/bootstrap.bundle.min.js"
+
+[menus]
+  [[menus.main]]
+  title = "Looking Glass"
+  weight = 900
+  url = "https://lg.tatk.network"
+  [menus.main.params]
+      target = "_blank"

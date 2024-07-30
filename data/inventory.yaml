@@ -1,0 +1,191 @@
+edge_routers:
+  children:
+    eu:
+      children:
+        uk:
+          hosts:
+            rt0-uk:
+              ansible_host: rt0.uk.tatk.network
+              loopback:
+                ipv4: 172.22.129.65
+                ipv6: fdb2:e864:673e:3152::65
+              link_local:
+                ipv4: 169.254.27.1
+                ipv6: fe80::3152:1
+              wireguard:
+                public_key: jvng3/Q+uAlmk64ol9gDHImR1GvGVMvkOmYO7USMYX0=
+              dn42:
+                regions: [41]
+                country: [1826]
+                peer_route_collector: true
+              looking_glass:
+                display_name: RT0-UK
+              location: "London, UK"
+              peerfinder:
+                uuid: !vault |
+                  $ANSIBLE_VAULT;1.1;AES256
+                  35303738336431633036366430646636633038646631313532643566653338343166643437326564
+                  6132333563306536613064623632306165656536326531390a653531313635363637326362316138
+                  61383530646534383830363433633861363837623836363339333936383437303939653565623339
+                  6235653635633437630a633761656239323038613939343032333331613633393636326334663463
+                  64343133333234313437666432306433396436623765353339373065366434633332353035353930
+                  3839616134353031633439646134323132633938386439383339
+              igp_upstreams:
+                - rt0-nl
+                - rt0-de
+                - rt0-us
+                - rt0-sg
+
+        nl:
+          hosts:
+            rt0-nl:
+              ansible_host: rt0.nl.tatk.network
+              loopback:
+                ipv4: 172.22.129.66
+                ipv6: fdb2:e864:673e:3152::66
+              link_local:
+                ipv4: 169.254.27.2
+                ipv6: fe80::3152:2
+              wireguard:
+                public_key: Q0F7kpVSjIOSzah/heFxLKUub72xNBS3+dpj2qSPnDU=
+              dn42:
+                regions: [41]
+                country: [1528]
+                peer_route_collector: true
+              looking_glass:
+                display_name: RT0-NL
+              location: "Amsterdam, NL"
+              peerfinder:
+                uuid: !vault |
+                  $ANSIBLE_VAULT;1.1;AES256
+                  31393330643036643833343234353933653636316134323263316162616135666638626663316430
+                  3735306137373064346635646463383231636361383430300a633230616236343231396339313266
+                  32656135386163373530653261303632366438373763356161373638626463663561323662306630
+                  3233363764393161330a306566393061386238383362346561366664626463353866376464653863
+                  65663263383039393664633932623835363230393538303736326461306564386639633333306636
+                  3635386437353134653930653336613730363238353834663866
+              igp_upstreams:
+                - rt0-uk
+                - rt0-de
+                - rt0-us
+                - rt0-sg
+
+        de:
+          hosts:
+            rt0-de:
+              ansible_host: rt0.de.tatk.network
+              loopback:
+                ipv4: 172.22.129.67
+                ipv6: fdb2:e864:673e:3152::67
+              link_local:
+                ipv4: 169.254.27.3
+                ipv6: fe80::3152:3
+              wireguard:
+                public_key: So3HOmzdnLlXcrIrk7lpP+KmoCHPlXNvbXLg73gI5CQ=
+              dn42:
+                regions: [41]
+                country: [1276]
+                peer_route_collector: true
+              looking_glass:
+                display_name: RT0-DE
+              location: "Falkenstein, DE"
+              peerfinder:
+                uuid: !vault |
+                  $ANSIBLE_VAULT;1.1;AES256
+                  34356337666637646437623762666466666138656165353930663433643262356437646239376436
+                  3763386533316437633562366464633736303064376235310a653934653438633131623632636239
+                  33323134666332343464313536376533353961373965313362353535326632313466643134373563
+                  3537616232343836610a623462313034653438363932393965616366316431346439303035643663
+                  63383430366165393332363537356261656634333434376632376462343231353565626332303866
+                  3964643237373232623733313835626665366364633962376138
+              igp_upstreams:
+                - rt0-uk
+                - rt0-nl
+                - rt0-us
+                - rt0-sg
+
+    us:
+      children:
+        ny:
+          hosts:
+            rt0-us:
+              ansible_host: rt0.us.tatk.network
+              loopback:
+                ipv4: 172.22.129.68
+                ipv6: fdb2:e864:673e:3152::68
+              link_local:
+                ipv4: 169.254.27.4
+                ipv6: fe80::3152:4
+              wireguard:
+                public_key: 54tB3QacxF+NIfAZlXzwPsUuu23Z45TgQNmZMiuDFWo=
+              dn42:
+                regions: [42]
+                country: [1840]
+                peer_route_collector: true
+              looking_glass:
+                display_name: RT0-US
+              location: "New York City, NY, USA"
+              peerfinder:
+                uuid: !vault |
+                  $ANSIBLE_VAULT;1.1;AES256
+                  35653535633165383063666462623836336662323430363637663235653464616138663234383762
+                  3539386633373132343930326236643831643931633934370a386432333838383364346361626130
+                  35396633346664353637376431626334393939623137373335393139393536633233313431373830
+                  3335343061656461310a346663363230303435626535393039663765393962356163636631346262
+                  32616131326138303266346130643635626436626561656531656232366461626330633362333263
+                  3230616461306464366335656537623064386261386466346535
+              igp_upstreams:
+                - rt0-uk
+                - rt0-nl
+                - rt0-de
+                - rt0-sg
+
+    apac:
+      children:
+        sg:
+          hosts:
+            rt0-sg:
+              ansible_host: rt0.sg.tatk.network
+              loopback:
+                ipv4: 172.22.129.69
+                ipv6: fdb2:e864:673e:3152::69
+              link_local:
+                ipv4: 169.254.27.5
+                ipv6: fe80::3152:5
+              wireguard:
+                public_key: pLGYi/kSldLPEpQ6RyyxQMUJCSbXxh3e3IySbcGrLDg=
+              dn42:
+                regions: [51]
+                country: [1702]
+                peer_route_collector: true
+              looking_glass:
+                display_name: RT0-SG
+              location: "Singapore, SG"
+              peerfinder:
+                uuid: !vault |
+                  $ANSIBLE_VAULT;1.1;AES256
+                  31383736303533333634323436316438383264343539663436386536396330643139356261346330
+                  3961383938376664653034353863306230373732623337370a316533333565366361643963393733
+                  65623935663531386562393939343537383566626232333964373230623834343639323364323565
+                  3132643262343537360a633466353061346662373234343438616434343438643465303839313431
+                  64333062343963376333643263626633323563366432353337333937383538646633376538653361
+                  3432363739376366333230613463353664333461666638396662
+              igp_upstreams:
+                - rt0-nl
+                - rt0-de
+                - rt0-us
+                - rt0-uk
+
+looking_glass:
+  hosts:
+    rt0-uk:
+
+dns:
+  children:
+    auth:
+      hosts:
+        rt0-uk:
+        rt0-nl:
+        rt0-de:
+        rt0-us:
+        rt0-sg:

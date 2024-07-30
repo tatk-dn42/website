@@ -1,0 +1,75 @@
+{{ define "header-styles" }}
+<style>
+    #map {
+        height: 550px;
+        width: 75%;
+        margin: auto;
+    }
+</style>
+{{ end}}
+
+{{ define "main" }}
+
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to TATK Network!</h1>
+    <p class="lead">TATK Network is a global DN42 Network, with network presence on every continent.</p>
+</div>
+
+<div id="map"></div>
+
+<br />
+<br />
+
+<h2 align="center">Network Nodes</h2>
+
+<br />
+
+<div class="node-table">
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Node ID</th>
+                <th scope="col">Location</th>
+                <th scope="col">Hostname</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+</div>
+
+{{ end }}
+
+
+{{ define "footer-scripts" }}
+<script>
+
+    var hostGeoJson = {{ .Site.Data.hosts }}
+
+    var map = L.map('map', {
+        center: [35, 0],
+        zoom: 3,
+        minZoom: 2
+    });
+
+    var layerGroup = L.geoJSON(hostGeoJson, {
+        style: {
+            "color": "#7393B3",
+            "weight": 2,
+            "dashArray": '5, 5',
+        },
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup(feature.properties.title);
+        }
+    }).addTo(map);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+</script>
+{{ end }}
