@@ -5,7 +5,7 @@ title = 'TATK DN42 Network'
 theme = "bootstrap"
 relativeURLS = true
 enableRobotsTXT = true
-enableGitInfo = false
+enableGitInfo = true
 
 [module]
 [[module.mounts]]

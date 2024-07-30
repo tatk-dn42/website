@@ -1,0 +1,67 @@
+asn: "4242423152"
+hosts:
+  rt0-de:
+    hostname: rt0.de.tatk.network
+    link_locals:
+      ipv4: 169.254.27.3
+      ipv6: fe80::3152:3
+    location: Falkenstein, DE
+    loopbacks:
+      ipv4: 172.22.129.67
+      ipv6: fdb2:e864:673e:3152::67
+    peering:
+      method: manual
+      policy: open
+    wg_public_key: So3HOmzdnLlXcrIrk7lpP+KmoCHPlXNvbXLg73gI5CQ=
+  rt0-nl:
+    hostname: rt0.nl.tatk.network
+    link_locals:
+      ipv4: 169.254.27.2
+      ipv6: fe80::3152:2
+    location: Amsterdam, NL
+    loopbacks:
+      ipv4: 172.22.129.66
+      ipv6: fdb2:e864:673e:3152::66
+    peering:
+      method: manual
+      policy: open
+    wg_public_key: Q0F7kpVSjIOSzah/heFxLKUub72xNBS3+dpj2qSPnDU=
+  rt0-sg:
+    hostname: rt0.sg.tatk.network
+    link_locals:
+      ipv4: 169.254.27.5
+      ipv6: fe80::3152:5
+    location: Singapore, SG
+    loopbacks:
+      ipv4: 172.22.129.69
+      ipv6: fdb2:e864:673e:3152::69
+    peering:
+      method: manual
+      policy: open
+    wg_public_key: pLGYi/kSldLPEpQ6RyyxQMUJCSbXxh3e3IySbcGrLDg=
+  rt0-uk:
+    hostname: rt0.uk.tatk.network
+    link_locals:
+      ipv4: 169.254.27.1
+      ipv6: fe80::3152:1
+    location: London, UK
+    loopbacks:
+      ipv4: 172.22.129.65
+      ipv6: fdb2:e864:673e:3152::65
+    peering:
+      method: manual
+      policy: open
+    wg_public_key: jvng3/Q+uAlmk64ol9gDHImR1GvGVMvkOmYO7USMYX0=
+  rt0-us:
+    hostname: rt0.us.tatk.network
+    link_locals:
+      ipv4: 169.254.27.4
+      ipv6: fe80::3152:4
+    location: New York City, NY, USA
+    loopbacks:
+      ipv4: 172.22.129.68
+      ipv6: fdb2:e864:673e:3152::68
+    peering:
+      method: manual
+      policy: open
+    wg_public_key: 54tB3QacxF+NIfAZlXzwPsUuu23Z45TgQNmZMiuDFWo=
