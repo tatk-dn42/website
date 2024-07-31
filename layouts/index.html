@@ -33,18 +33,28 @@
                 <th scope="col">Node ID</th>
                 <th scope="col">Hostname</th>
                 <th scope="col">Location</th>
-                <th scope="col">WG Public Key</th>
+                <th scope="col">Supported Protocols</th>
                 <th scope="col">Peering Policy</th>
                 <th scope="col">Peering Method</th>
             </tr>
         </thead>
         <tbody>
             {{ range $host, $data := .Site.Data.config.hosts }}
-            <tr id="rt0-de">
+            <tr id="{{ $host }}">
                 <th scope="row">{{ $host }}</th>
                 <td>{{ .hostname }}</td>
                 <td>{{ .location }}</td>
-                <td><code>{{ .wg_public_key }}</code></td>
+                <td>
+                    {{if .wg_public_key }}
+                    <span class="badge badge-pill badge-info">Wireguard</span>
+                    {{ end }}
+                    {{if .openvpn }}
+                    <span class="badge badge-pill badge-secondary">OpenVPN</span>
+                    {{ end }}
+                    {{if .gre }}
+                    <span class="badge badge-pill badge-primary">GRE</span>
+                    {{ end }}
+                </td>
                 <td>
                     {{ if eq .peering.policy "open" }}
                     <span class="badge badge-pill badge-success">Open</span>
@@ -54,9 +64,9 @@
                 </td>
                 <td>
                     {{ if eq .peering.method "manual" }}
-                    <span class="badge badge-pill badge-warning">Manual, please get in touch</span>
+                    <a class="badge badge-pill badge-warning" href="/contact">Manual, please get in touch</a>
                     {{ else if eq .peering.method "auto" }}
-                    <span class="badge badge-pill badge-info">Auto</span>
+                    <a class="badge badge-pill badge-info">Auto</a>
                     {{ end}}
                 </td>
             </tr>
