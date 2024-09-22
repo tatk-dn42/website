@@ -72,6 +72,20 @@
             }
         },
         {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.419415,
+                    37.774929
+                ]
+            },
+            "properties": {
+                "title": "<a href=\"#rt1-us\">San Francisco, CA, USA</a>",
+                "description": ""
+            }
+        },
+        {
             "type": "LineString",
             "properties": {
                 "title": "rt0-uk <-> rt0-nl"
@@ -132,6 +146,22 @@
                 [
                     103.819836,
                     1.352083
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-uk <-> rt1-us"
+            },
+            "coordinates": [
+                [
+                    -0.127586,
+                    51.507218
+                ],
+                [
+                    -122.419415,
+                    37.774929
                 ]
             ]
         },
@@ -202,6 +232,22 @@
         {
             "type": "LineString",
             "properties": {
+                "title": "rt0-nl <-> rt1-us"
+            },
+            "coordinates": [
+                [
+                    4.904139,
+                    52.367573
+                ],
+                [
+                    -122.419415,
+                    37.774929
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
                 "title": "rt0-de <-> rt0-uk"
             },
             "coordinates": [
@@ -260,6 +306,22 @@
                 [
                     103.819836,
                     1.352083
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-de <-> rt1-us"
+            },
+            "coordinates": [
+                [
+                    12.48694,
+                    49.097615
+                ],
+                [
+                    -122.419415,
+                    37.774929
                 ]
             ]
         },
@@ -330,6 +392,102 @@
         {
             "type": "LineString",
             "properties": {
+                "title": "rt0-us <-> rt1-us"
+            },
+            "coordinates": [
+                [
+                    -74.005973,
+                    40.712775
+                ],
+                [
+                    -122.419415,
+                    37.774929
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt1-us <-> rt0-uk"
+            },
+            "coordinates": [
+                [
+                    -122.419415,
+                    37.774929
+                ],
+                [
+                    -0.127586,
+                    51.507218
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt1-us <-> rt0-nl"
+            },
+            "coordinates": [
+                [
+                    -122.419415,
+                    37.774929
+                ],
+                [
+                    4.904139,
+                    52.367573
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt1-us <-> rt0-de"
+            },
+            "coordinates": [
+                [
+                    -122.419415,
+                    37.774929
+                ],
+                [
+                    12.48694,
+                    49.097615
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt1-us <-> rt0-sg"
+            },
+            "coordinates": [
+                [
+                    -122.419415,
+                    37.774929
+                ],
+                [
+                    103.819836,
+                    1.352083
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt1-us <-> rt0-us"
+            },
+            "coordinates": [
+                [
+                    -122.419415,
+                    37.774929
+                ],
+                [
+                    -74.005973,
+                    40.712775
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
                 "title": "rt0-sg <-> rt0-nl"
             },
             "coordinates": [
@@ -388,6 +546,22 @@
                 [
                     -0.127586,
                     51.507218
+                ]
+            ]
+        },
+        {
+            "type": "LineString",
+            "properties": {
+                "title": "rt0-sg <-> rt1-us"
+            },
+            "coordinates": [
+                [
+                    103.819836,
+                    1.352083
+                ],
+                [
+                    -122.419415,
+                    37.774929
                 ]
             ]
         }
