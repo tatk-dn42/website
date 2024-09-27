@@ -1,19 +1,36 @@
-<footer class="footer fixed-bottom bg-dark">
-
-    <!-- <div class="row footer-text">
-        <div class="col-12 col-md text-center text-md-left nav-link text-white">© TATK Network - {{ time.Now.Year }} All
-            rights
-            reserved.</div>
-    </div> -->
-
-</footer>
-
 <!-- JavaScript and dependencies -->
-
-{{ $bootstrap := resources.Get "js/bootstrap.bundle.min.js" }}
-{{ $js := slice $bootstrap | resources.Concat "js/bundle.js" | resources.Minify }}
-
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-<script src="{{$js.RelPermalink}}" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+<footer class="footer bg-light mt-auto">
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">© {{ time.Now.Year }} TATK Network</p>
+
+        <a href="/"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+        </a>
+
+
+        <ul class="nav col-md-4 justify-content-end">
+            {{ $currentPage := . }}
+
+            {{ range .Site.Menus.footer.ByWeight }}
+            <li class="nav-item">
+                <a href="{{ .URL }}" class="nav-link px-2 text-muted" {{ if .Params.target
+                    }}target="{{ .Params.target }}" {{ end }}>{{ .Title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </footer>
+</footer>

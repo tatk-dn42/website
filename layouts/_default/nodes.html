@@ -1,0 +1,57 @@
+{{ define "main" }}
+
+<div class="jumbotron text-center">
+    <h1 class="display-4">{{ .Title }}</h1>
+    <p>{{ .Summary }}</p>
+</div>
+
+{{ $i := 0 }}
+
+<div class="container-fluid">
+
+    <div class="row">
+
+    {{ range $host, $data := .Site.Data.config.hosts }}
+
+        <div class="col-sm-6">
+            <div class="card" id="{{ $host }}">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{ .hostname }}</h5>
+                    <div class="card-text">
+                        <strong>Location: </strong>{{ .location }}<br />
+                        <strong>AS Number: </strong>{{ .Site.Data.config.asn }}<br />
+                        <strong>Peering Policy: </strong>{{ .peering.policy }}<br />
+                        <strong>Peering Method: </strong>{{ .peering.method }}<br /><br />
+                        
+                        <strong>Wireguard Public Key: </strong><code>{{ .wg_public_key }}</code><br />
+                        <strong>Wireguard Port: </strong>2000 + last 4 of your AS Number<br /><br />
+
+                        <strong>DN42 Address: </strong>
+                        <ul style="list-style-type: none;">
+                            <li><strong>IPv4: </strong><code>{{ .loopbacks.ipv4 }}</code></li>
+                            <li><strong>IPv6: </strong><code>{{ .loopbacks.ipv6 }}</code></li>
+                        </ul>
+                        <strong>Link Local Address:</strong>
+                        <ul style="list-style-type: none; margin-bottom: none; padding-bottom: none;">
+                            <li><strong>IPv4: </strong><code>{{ .link_locals.ipv4 }}</code></li>
+                            <li><strong>IPv6: </strong><code>{{ .link_locals.ipv6 }}</code></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{ if modBool (add $i 1) 2 }}
+        </div>
+
+        <br />
+
+        <div class="row">
+        {{ end }}
+    
+    {{ $i = add $i 1 }}
+    {{ end }}
+
+</div>
+
+{{ end }}

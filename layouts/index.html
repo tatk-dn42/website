@@ -16,64 +16,66 @@
     <p><strong>AS{{ .Site.Data.config.asn }}</strong></p>
 </div>
 
-<div id="map"></div>
+<div class="container-fluid">
+    <div id="map"></div>
 
-<br />
-<br />
+    <br />
+    <br />
 
-<h2 align="center">Network Nodes</h2>
+    <h2 align="center">Network Nodes</h2>
 
-<br />
+    <br />
 
-<div class="node-table">
+    <div class="node-table">
 
-    <table class="table table-bordered table-striped table-hover">
-        <thead>
-            <tr>
-                <th scope="col">Node ID</th>
-                <th scope="col">Hostname</th>
-                <th scope="col">Location</th>
-                <th scope="col">Supported Protocols</th>
-                <th scope="col">Peering Policy</th>
-                <th scope="col">Peering Method</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{ range $host, $data := .Site.Data.config.hosts }}
-            <tr id="{{ $host }}">
-                <th scope="row">{{ $host }}</th>
-                <td>{{ .hostname }}</td>
-                <td>{{ .location }}</td>
-                <td>
-                    {{if .wg_public_key }}
-                    <span class="badge badge-pill badge-info">Wireguard</span>
-                    {{ end }}
-                    {{if .openvpn }}
-                    <span class="badge badge-pill badge-secondary">OpenVPN</span>
-                    {{ end }}
-                    {{if .gre }}
-                    <span class="badge badge-pill badge-primary">GRE</span>
-                    {{ end }}
-                </td>
-                <td>
-                    {{ if eq .peering.policy "open" }}
-                    <span class="badge badge-pill badge-success">Open</span>
-                    {{ else if eq .peering.policy "closed" }}
-                    <span class="badge badge-pill badge-danger">Closed</span>
-                    {{ end}}
-                </td>
-                <td>
-                    {{ if eq .peering.method "manual" }}
-                    <a class="badge badge-pill badge-warning" href="/contact">Manual, please get in touch</a>
-                    {{ else if eq .peering.method "auto" }}
-                    <a class="badge badge-pill badge-info">Auto</a>
-                    {{ end}}
-                </td>
-            </tr>
-            {{ end }}
-        </tbody>
-    </table>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Node ID</th>
+                    <th scope="col">Hostname</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Supported Protocols</th>
+                    <th scope="col">Peering Policy</th>
+                    <th scope="col">Peering Method</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range $host, $data := .Site.Data.config.hosts }}
+                <tr id="{{ $host }}">
+                    <th scope="row">{{ $host }}</th>
+                    <td>{{ .hostname }}</td>
+                    <td>{{ .location }}</td>
+                    <td>
+                        {{if .wg_public_key }}
+                        <span class="badge badge-pill badge-info">Wireguard</span>
+                        {{ end }}
+                        {{if .openvpn }}
+                        <span class="badge badge-pill badge-secondary">OpenVPN</span>
+                        {{ end }}
+                        {{if .gre }}
+                        <span class="badge badge-pill badge-primary">GRE</span>
+                        {{ end }}
+                    </td>
+                    <td>
+                        {{ if eq .peering.policy "open" }}
+                        <span class="badge badge-pill badge-success">Open</span>
+                        {{ else if eq .peering.policy "closed" }}
+                        <span class="badge badge-pill badge-danger">Closed</span>
+                        {{ end}}
+                    </td>
+                    <td>
+                        {{ if eq .peering.method "manual" }}
+                        <a class="badge badge-pill badge-warning" href="/contact">Manual, please get in touch</a>
+                        {{ else if eq .peering.method "auto" }}
+                        <a class="badge badge-pill badge-info">Auto</a>
+                        {{ end}}
+                    </td>
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
 
+    </div>
 </div>
 
 {{ end }}
@@ -85,7 +87,7 @@
     var hostGeoJson = {{ .Site.Data.hosts }}
 
     var map = L.map('map', {
-        center: [35, 0],
+        center: [35, -15],
         zoom: 3,
         minZoom: 2
     });

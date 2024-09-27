@@ -7,15 +7,17 @@ relativeURLS = true
 enableRobotsTXT = true
 enableGitInfo = true
 
-[module]
-[[module.mounts]]
-    source = "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-    target = "assets/js/bootstrap.bundle.min.js"
-
 [menus]
   [[menus.main]]
-  title = "Looking Glass"
+  name = "Looking Glass"
   weight = 900
   url = "https://lg.tatk.network"
+  [menus.main.params]
+      target = "_blank"
+
+  [[menus.main]]
+  name = "Status Page"
+  weight = 901
+  url = "https:/status.tatk.network"
   [menus.main.params]
       target = "_blank"

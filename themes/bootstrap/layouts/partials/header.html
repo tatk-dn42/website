@@ -19,14 +19,14 @@
             <li class="nav-item dropdown">
                 <a class='nav-link dropdown-toggle  {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active {{ end }}'
                     href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    {{ .Title }}
+                    {{ .Name }}
                 </a>
 
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     {{ range .Children }}
                     <li>
                         <a class='dropdown-item  {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active {{ end }}'
-                            href="{{ .URL }}" {{ if .Params.target }}target="{{ .Params.target }}" {{ end }}> {{ .Title
+                            href="{{ absURL .URL }}" {{ with .Params.target -}} target="{{ . }}" {{ end -}}> {{ .Name
                             }}</a>
                     </li>
                     {{ end }}
@@ -36,8 +36,8 @@
             {{ else }}
             <li class="nav-item">
                 <a class='nav-link {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active {{ end }}'
-                    href="{{ absURL .URL }}" {{ if .Params.target }}target="{{ .Params.target }}" {{ end }}>
-                    {{ .Title }}
+                    href="{{ absURL .URL }}" {{ with .Params.target -}} target="{{ . }}" {{ end -}}>
+                    {{ .Name }}
                 </a>
             </li>
             {{ end }}
