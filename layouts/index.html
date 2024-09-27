@@ -42,7 +42,7 @@
             <tbody>
                 {{ range $host, $data := .Site.Data.config.hosts }}
                 <tr id="{{ $host }}">
-                    <th scope="row">{{ $host }}</th>
+                    <th scope="row"><a href="/nodes#{{ $host }}">{{ $host }}</a></th>
                     <td>{{ .hostname }}</td>
                     <td>{{ .location }}</td>
                     <td>
@@ -87,7 +87,7 @@
     var hostGeoJson = {{ .Site.Data.hosts }}
 
     var map = L.map('map', {
-        center: [35, -15],
+        center: [35, -10],
         zoom: 3,
         minZoom: 2
     });

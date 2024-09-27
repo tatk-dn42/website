@@ -12,3 +12,18 @@
 </div>
 
 {{ end }}
+
+{{ define "footer-scripts" }}
+
+<script>
+
+    var urlParams = new URLSearchParams(window.location.search);
+    var success = urlParams.get('success');
+
+    if (success) {
+        $('#contact-success').show();
+    }
+
+</script>
+
+{{ end}}

@@ -19,12 +19,12 @@
                     <h5 class="card-title text-center">{{ .hostname }}</h5>
                     <div class="card-text">
                         <strong>Location: </strong>{{ .location }}<br />
-                        <strong>AS Number: </strong>{{ .Site.Data.config.asn }}<br />
+                        <strong>AS Number: </strong><code>AS{{ site.Data.config.asn }}</code><br />
                         <strong>Peering Policy: </strong>{{ .peering.policy }}<br />
                         <strong>Peering Method: </strong>{{ .peering.method }}<br /><br />
                         
                         <strong>Wireguard Public Key: </strong><code>{{ .wg_public_key }}</code><br />
-                        <strong>Wireguard Port: </strong>2000 + last 4 of your AS Number<br /><br />
+                        <strong>Wireguard Port: </strong>20000 + last 4 of your AS Number (e.g. 23152)<br /><br />
 
                         <strong>DN42 Address: </strong>
                         <ul style="list-style-type: none;">
