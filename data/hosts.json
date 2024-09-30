@@ -11,7 +11,7 @@
                 ]
             },
             "properties": {
-                "title": "<a href=\"#rt0-de\">Falkenstein, DE</a>",
+                "title": "<a href=\"/nodes#rt0-de\">Falkenstein, DE</a>",
                 "description": ""
             }
         },
@@ -25,7 +25,7 @@
                 ]
             },
             "properties": {
-                "title": "<a href=\"#rt0-nl\">Amsterdam, NL</a>",
+                "title": "<a href=\"/nodes#rt0-nl\">Amsterdam, NL</a>",
                 "description": ""
             }
         },
@@ -39,7 +39,7 @@
                 ]
             },
             "properties": {
-                "title": "<a href=\"#rt0-sg\">Singapore, SG</a>",
+                "title": "<a href=\"/nodes#rt0-sg\">Singapore, SG</a>",
                 "description": ""
             }
         },
@@ -53,7 +53,7 @@
                 ]
             },
             "properties": {
-                "title": "<a href=\"#rt0-uk\">London, UK</a>",
+                "title": "<a href=\"/nodes#rt0-uk\">London, UK</a>",
                 "description": ""
             }
         },
@@ -67,7 +67,7 @@
                 ]
             },
             "properties": {
-                "title": "<a href=\"#rt0-us\">New York City, NY, USA</a>",
+                "title": "<a href=\"/nodes#rt0-us\">New York City, NY, USA</a>",
                 "description": ""
             }
         },
@@ -81,7 +81,7 @@
                 ]
             },
             "properties": {
-                "title": "<a href=\"#rt1-us\">San Francisco, CA, USA</a>",
+                "title": "<a href=\"/nodes#rt1-us\">San Francisco, CA, USA</a>",
                 "description": ""
             }
         },

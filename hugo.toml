@@ -18,6 +18,6 @@ enableGitInfo = true
   [[menus.main]]
   name = "Status Page"
   weight = 901
-  url = "https:/status.tatk.network"
+  url = "https://status.tatk.network"
   [menus.main.params]
       target = "_blank"
