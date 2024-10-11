@@ -38,7 +38,7 @@ hosts:
     peering:
       method: manual
       policy: open
-    wg_public_key: pLGYi/kSldLPEpQ6RyyxQMUJCSbXxh3e3IySbcGrLDg=
+    wg_public_key: ulL02/8Z2brK85/y2u389mVkieM4cXQrX/t+4jaJZQ8=
   rt0-uk:
     hostname: rt0.uk.tatk.network
     link_locals:
@@ -77,4 +77,4 @@ hosts:
     peering:
       method: manual
       policy: open
-    wg_public_key: UYgfyVQQAEJp1/uNRBwduFFG+f/iubredlpCWPDy7Qw=
+    wg_public_key: 8EjYngEiwoUaIMjHlOTysiy2SZsQzBxEy7epNK3zMGk=
