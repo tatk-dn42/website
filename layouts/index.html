@@ -12,8 +12,7 @@
 
 <div class="jumbotron text-center">
     <h1 class="display-4">Welcome to TATK Network!</h1>
-    <p class="lead">TATK Network is a global DN42 Network, with network presence on nearly every continent.</p>
-    <p><strong>AS{{ .Site.Data.config.asn }}</strong></p>
+    <p class="lead">TATK Network (AS{{ .Site.Data.config.asn }}) is a global DN42 Network, with network presence on nearly every continent.</p>
 </div>
 
 <div class="container-fluid">
@@ -78,6 +77,16 @@
         </table>
 
     </div>
+
+    <br />
+
+    <h2 align="center">Network Size</h2>
+    
+    <div align="center">
+        <small>Thanks <a href="https://github.com/jlu5/ansible-dn42">@jlu5</a> for the inspiration for the graph</small>
+
+        <img src="/history.svg" alt="Network Size Graph" style="width: 40%; height: auto; display: block;">
+    </div>
 </div>
 
 {{ end }}
@@ -97,7 +106,7 @@
     var layerGroup = L.geoJSON(hostGeoJson, {
         style: {
             "color": "#7393B3",
-            "weight": 2,
+            "weight": 0,
             "dashArray": '5, 5',
         },
         onEachFeature: function (feature, layer) {

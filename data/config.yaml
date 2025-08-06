@@ -78,3 +78,28 @@ hosts:
       method: manual
       policy: open
     wg_public_key: 8EjYngEiwoUaIMjHlOTysiy2SZsQzBxEy7epNK3zMGk=
+services:
+  auth_dns:
+    dn42:
+      hostname: ns.tatk.dn42
+      ipv4: 172.22.129.73
+      ipv6: fdb2:e864:673e::53
+  looking_glass:
+    clearnet:
+      hostname: lg.tatk.network
+      url: https://lg.tatk.network/
+    dn42:
+      hostname: lg.tatk.dn42
+      url: https://lg.tatk.dn42
+  recursive_dns:
+    dn42:
+      hostname: dns.tatk.dn42
+      ipv4: 172.22.129.74
+      ipv6: fdb2:e864:673e::5353
+  status_page:
+    clearnet:
+      hostname: status.tatk.network
+      url: https://status.tatk.network/
+    dn42:
+      hostname: status.tatk.dn42
+      url: https://status.tatk.dn42
