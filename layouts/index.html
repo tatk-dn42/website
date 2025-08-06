@@ -98,9 +98,9 @@
     var hostGeoJson = {{ .Site.Data.hosts }}
 
     var map = L.map('map', {
-        center: [35, -5],
+        center: [20, -5],
         zoom: 3,
-        minZoom: 2
+        minZoom: 3
     });
 
     var layerGroup = L.geoJSON(hostGeoJson, {
@@ -128,13 +128,21 @@
 
     for (var i = 0; i < rows.length; i++) {
         var url = "https://" + rows[i].children[1].innerText + "/api/meta/info";
-        
-        xmlHttp.open("GET", url, false);
-        xmlHttp.send(null);
+        try {
+            xmlHttp.open("GET", url, false);
+            xmlHttp.send(null);
 
-        var response = JSON.parse(xmlHttp.responseText);
-
-        rows[i].children[3].innerText = response.current_peers + " / " + response.peer_limit;
+            if (xmlHttp.status === 200) {
+                var response = JSON.parse(xmlHttp.responseText);
+                rows[i].children[3].innerText = response.current_peers + " / " + response.peer_limit;
+            } else {
+                console.error("Failed to fetch data for " + url + ": Status " + xmlHttp.status);
+                continue;
+            }
+        } catch (e) {
+            console.error("Error fetching data for " + url + ": " + e);
+            continue;
+        }
     }
 </script>
 {{ end }}

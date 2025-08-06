@@ -65,6 +65,19 @@ hosts:
       method: manual
       policy: open
     wg_public_key: 54tB3QacxF+NIfAZlXzwPsUuu23Z45TgQNmZMiuDFWo=
+  rt0-za:
+    hostname: rt0.za.tatk.network
+    link_locals:
+      ipv4: 169.254.27.7
+      ipv6: fe80::3152:7
+    location: Johannesburg, ZA
+    loopbacks:
+      ipv4: 172.22.129.71
+      ipv6: fdb2:e864:673e:3152::71
+    peering:
+      method: manual
+      policy: open
+    wg_public_key: 6mK9N12snzQskVqkFmgePc9nr26/OPn7K5mDDoLc1B4=
   rt1-us:
     hostname: rt1.us.tatk.network
     link_locals:
