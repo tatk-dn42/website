@@ -6,7 +6,7 @@ regions:
     hosts:
       rt0-uk:
         hostname: rt0.uk.tatk.network
-        location: 🇬🇧 London, UK
+        location: "\U0001F1EC\U0001F1E7 London, UK"
         loopbacks:
           ipv4: 172.22.129.65
           ipv6: fdb2:e864:673e:3152::65
@@ -17,9 +17,10 @@ regions:
         peering:
           policy: open
           method: manual
+        title: null
       rt0-nl:
         hostname: rt0.nl.tatk.network
-        location: 🇳🇱 Amsterdam, NL
+        location: "\U0001F1F3\U0001F1F1 Amsterdam, NL"
         loopbacks:
           ipv4: 172.22.129.66
           ipv6: fdb2:e864:673e:3152::66
@@ -30,9 +31,10 @@ regions:
         peering:
           policy: open
           method: manual
+        title: null
       rt0-de:
         hostname: rt0.de.tatk.network
-        location: 🇩🇪 Falkenstein, DE
+        location: "\U0001F1E9\U0001F1EA Falkenstein, DE"
         loopbacks:
           ipv4: 172.22.129.67
           ipv6: fdb2:e864:673e:3152::67
@@ -43,13 +45,14 @@ regions:
         peering:
           policy: open
           method: manual
+        title: null
   us:
     sort: 2
     title: Americas
     hosts:
       rt0-us:
         hostname: rt0.us.tatk.network
-        location: 🇺🇸 New York City, NY, USA
+        location: "\U0001F1FA\U0001F1F8 New York City, NY, USA"
         loopbacks:
           ipv4: 172.22.129.68
           ipv6: fdb2:e864:673e:3152::68
@@ -60,9 +63,10 @@ regions:
         peering:
           policy: open
           method: manual
+        title: null
       rt1-us:
         hostname: rt1.us.tatk.network
-        location: 🇺🇸 San Francisco, CA, USA
+        location: "\U0001F1FA\U0001F1F8 San Francisco, CA, USA"
         loopbacks:
           ipv4: 172.22.129.70
           ipv6: fdb2:e864:673e:3152::70
@@ -73,13 +77,14 @@ regions:
         peering:
           policy: open
           method: manual
+        title: null
   apac:
     sort: 3
     title: Asia Pacific
     hosts:
       rt0-sg:
         hostname: rt0.sg.tatk.network
-        location: 🇸🇬 Singapore, SG
+        location: "\U0001F1F8\U0001F1EC Singapore, SG"
         loopbacks:
           ipv4: 172.22.129.69
           ipv6: fdb2:e864:673e:3152::69
@@ -90,13 +95,14 @@ regions:
         peering:
           policy: open
           method: manual
+        title: null
   africa:
     sort: 4
     title: Africas
     hosts:
       rt0-za:
         hostname: rt0.za.tatk.network
-        location: 🇿🇦 Johannesburg, ZA
+        location: "\U0001F1FF\U0001F1E6 Johannesburg, ZA"
         loopbacks:
           ipv4: 172.22.129.71
           ipv6: fdb2:e864:673e:3152::71
@@ -107,6 +113,7 @@ regions:
         peering:
           policy: open
           method: manual
+        title: null
 services:
   looking_glass:
     clearnet:
@@ -132,3 +139,8 @@ services:
       hostname: dns.tatk.dn42
       ipv4: 172.22.129.74
       ipv6: fdb2:e864:673e::5353
+  pingable:
+    dn42:
+      hostname: pingme.tatk.dn42
+      ipv4: 172.22.129.75
+      ipv6: fdb2:e864:673e::1

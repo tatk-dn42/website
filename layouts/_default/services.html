@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+<div class="jumbotron text-center">
+    <h1 class="display-4">{{ .Title }}</h1>
+    <p>{{ .Summary }}</p>
+</div>
+
+<div class="container-fluid">
+
+    <h2>Looking Glass</h2>
+
+    <p>Our Looking Glass service provides a way to test network connectivity and routing from our servers.</p>
+    <p>It is available from both the DN42 Network or Clearnet</p>
+
+    <p>Clearnet - Access it <a href="{{ .Site.Data.config.services.looking_glass.clearnet.url }}">here</a>.</p>
+    <p>DN42 - Access it <a href="{{ .Site.Data.config.services.looking_glass.dn42.url }}">here</a>.</p>
+    <br />
+
+    <hr>
+
+    <h2>DNS</h2>
+
+    <p>Our DNS service provides a way to resolve domain names to IP addresses within the DN42 network.</p>
+    <p>We provide both a recursive and authoritative service</p>
+
+    <strong>Authoritative DNS</strong><br />
+    Our authoritative DNS service is available at <br />
+    <code>
+                {{ .Site.Data.config.services.auth_dns.dn42.hostname }}
+                {{ .Site.Data.config.services.auth_dns.dn42.ipv4 }}
+                {{ .Site.Data.config.services.auth_dns.dn42.ipv6 }}
+            </code>
+    <br /><br />
+
+    <strong>Recursive DNS</strong><br />
+    Our recursive DNS service is available at <br />
+    <code>
+        {{ .Site.Data.config.services.recursive_dns.dn42.hostname }}
+        {{ .Site.Data.config.services.recursive_dns.dn42.ipv4 }}
+        {{ .Site.Data.config.services.recursive_dns.dn42.ipv6 }}
+    </code>
+    <br /><br />
+    
+    <hr>
+    
+    <h2>Pingable Host</h2>
+    <p>We provide a pingable host for testing connectivity within the DN42 network.</p>
+    <p>It is anycasted to the node closest to you.</p>
+    <p>Pingable host is available at <br />
+    <code>
+        {{ .Site.Data.config.services.pingable.dn42.hostname }}
+        {{ .Site.Data.config.services.pingable.dn42.ipv4 }}
+        {{ .Site.Data.config.services.pingable.dn42.ipv6 }}
+    </code>
+    </p>
+    <br /><br />
+</div>
+{{ end }}
