@@ -1,118 +1,134 @@
 asn: "4242423152"
-hosts:
-  rt0-de:
-    hostname: rt0.de.tatk.network
-    link_locals:
-      ipv4: 169.254.27.3
-      ipv6: fe80::3152:3
-    location: Falkenstein, DE
-    loopbacks:
-      ipv4: 172.22.129.67
-      ipv6: fdb2:e864:673e:3152::67
-    peering:
-      method: manual
-      policy: open
-    wg_public_key: So3HOmzdnLlXcrIrk7lpP+KmoCHPlXNvbXLg73gI5CQ=
-  rt0-nl:
-    hostname: rt0.nl.tatk.network
-    link_locals:
-      ipv4: 169.254.27.2
-      ipv6: fe80::3152:2
-    location: Amsterdam, NL
-    loopbacks:
-      ipv4: 172.22.129.66
-      ipv6: fdb2:e864:673e:3152::66
-    peering:
-      method: manual
-      policy: open
-    wg_public_key: Q0F7kpVSjIOSzah/heFxLKUub72xNBS3+dpj2qSPnDU=
-  rt0-sg:
-    hostname: rt0.sg.tatk.network
-    link_locals:
-      ipv4: 169.254.27.5
-      ipv6: fe80::3152:5
-    location: Singapore, SG
-    loopbacks:
-      ipv4: 172.22.129.69
-      ipv6: fdb2:e864:673e:3152::69
-    peering:
-      method: manual
-      policy: open
-    wg_public_key: ulL02/8Z2brK85/y2u389mVkieM4cXQrX/t+4jaJZQ8=
-  rt0-uk:
-    hostname: rt0.uk.tatk.network
-    link_locals:
-      ipv4: 169.254.27.1
-      ipv6: fe80::3152:1
-    location: London, UK
-    loopbacks:
-      ipv4: 172.22.129.65
-      ipv6: fdb2:e864:673e:3152::65
-    peering:
-      method: manual
-      policy: open
-    wg_public_key: jvng3/Q+uAlmk64ol9gDHImR1GvGVMvkOmYO7USMYX0=
-  rt0-us:
-    hostname: rt0.us.tatk.network
-    link_locals:
-      ipv4: 169.254.27.4
-      ipv6: fe80::3152:4
-    location: New York City, NY, USA
-    loopbacks:
-      ipv4: 172.22.129.68
-      ipv6: fdb2:e864:673e:3152::68
-    peering:
-      method: manual
-      policy: open
-    wg_public_key: 54tB3QacxF+NIfAZlXzwPsUuu23Z45TgQNmZMiuDFWo=
-  rt0-za:
-    hostname: rt0.za.tatk.network
-    link_locals:
-      ipv4: 169.254.27.7
-      ipv6: fe80::3152:7
-    location: Johannesburg, ZA
-    loopbacks:
-      ipv4: 172.22.129.71
-      ipv6: fdb2:e864:673e:3152::71
-    peering:
-      method: manual
-      policy: open
-    wg_public_key: 6mK9N12snzQskVqkFmgePc9nr26/OPn7K5mDDoLc1B4=
-  rt1-us:
-    hostname: rt1.us.tatk.network
-    link_locals:
-      ipv4: 169.254.27.6
-      ipv6: fe80::3152:6
-    location: San Francisco, CA, USA
-    loopbacks:
-      ipv4: 172.22.129.70
-      ipv6: fdb2:e864:673e:3152::70
-    peering:
-      method: manual
-      policy: open
-    wg_public_key: 8EjYngEiwoUaIMjHlOTysiy2SZsQzBxEy7epNK3zMGk=
+regions:
+  eu:
+    sort: 1
+    title: Europe
+    hosts:
+      rt0-uk:
+        hostname: rt0.uk.tatk.network
+        location: 🇬🇧 London, UK
+        loopbacks:
+          ipv4: 172.22.129.65
+          ipv6: fdb2:e864:673e:3152::65
+        link_locals:
+          ipv4: 169.254.27.1
+          ipv6: fe80::3152:1
+        wg_public_key: jvng3/Q+uAlmk64ol9gDHImR1GvGVMvkOmYO7USMYX0=
+        peering:
+          policy: open
+          method: manual
+      rt0-nl:
+        hostname: rt0.nl.tatk.network
+        location: 🇳🇱 Amsterdam, NL
+        loopbacks:
+          ipv4: 172.22.129.66
+          ipv6: fdb2:e864:673e:3152::66
+        link_locals:
+          ipv4: 169.254.27.2
+          ipv6: fe80::3152:2
+        wg_public_key: Q0F7kpVSjIOSzah/heFxLKUub72xNBS3+dpj2qSPnDU=
+        peering:
+          policy: open
+          method: manual
+      rt0-de:
+        hostname: rt0.de.tatk.network
+        location: 🇩🇪 Falkenstein, DE
+        loopbacks:
+          ipv4: 172.22.129.67
+          ipv6: fdb2:e864:673e:3152::67
+        link_locals:
+          ipv4: 169.254.27.3
+          ipv6: fe80::3152:3
+        wg_public_key: So3HOmzdnLlXcrIrk7lpP+KmoCHPlXNvbXLg73gI5CQ=
+        peering:
+          policy: open
+          method: manual
+  us:
+    sort: 2
+    title: Americas
+    hosts:
+      rt0-us:
+        hostname: rt0.us.tatk.network
+        location: 🇺🇸 New York City, NY, USA
+        loopbacks:
+          ipv4: 172.22.129.68
+          ipv6: fdb2:e864:673e:3152::68
+        link_locals:
+          ipv4: 169.254.27.4
+          ipv6: fe80::3152:4
+        wg_public_key: 54tB3QacxF+NIfAZlXzwPsUuu23Z45TgQNmZMiuDFWo=
+        peering:
+          policy: open
+          method: manual
+      rt1-us:
+        hostname: rt1.us.tatk.network
+        location: 🇺🇸 San Francisco, CA, USA
+        loopbacks:
+          ipv4: 172.22.129.70
+          ipv6: fdb2:e864:673e:3152::70
+        link_locals:
+          ipv4: 169.254.27.6
+          ipv6: fe80::3152:6
+        wg_public_key: 8EjYngEiwoUaIMjHlOTysiy2SZsQzBxEy7epNK3zMGk=
+        peering:
+          policy: open
+          method: manual
+  apac:
+    sort: 3
+    title: Asia Pacific
+    hosts:
+      rt0-sg:
+        hostname: rt0.sg.tatk.network
+        location: 🇸🇬 Singapore, SG
+        loopbacks:
+          ipv4: 172.22.129.69
+          ipv6: fdb2:e864:673e:3152::69
+        link_locals:
+          ipv4: 169.254.27.5
+          ipv6: fe80::3152:5
+        wg_public_key: ulL02/8Z2brK85/y2u389mVkieM4cXQrX/t+4jaJZQ8=
+        peering:
+          policy: open
+          method: manual
+  africa:
+    sort: 4
+    title: Africas
+    hosts:
+      rt0-za:
+        hostname: rt0.za.tatk.network
+        location: 🇿🇦 Johannesburg, ZA
+        loopbacks:
+          ipv4: 172.22.129.71
+          ipv6: fdb2:e864:673e:3152::71
+        link_locals:
+          ipv4: 169.254.27.7
+          ipv6: fe80::3152:7
+        wg_public_key: 6mK9N12snzQskVqkFmgePc9nr26/OPn7K5mDDoLc1B4=
+        peering:
+          policy: open
+          method: manual
 services:
+  looking_glass:
+    clearnet:
+      url: https://lg.tatk.network/
+      hostname: lg.tatk.network
+    dn42:
+      url: https://lg.tatk.dn42
+      hostname: lg.tatk.dn42
+  status_page:
+    clearnet:
+      url: https://status.tatk.network/
+      hostname: status.tatk.network
+    dn42:
+      url: https://status.tatk.dn42
+      hostname: status.tatk.dn42
   auth_dns:
     dn42:
       hostname: ns.tatk.dn42
       ipv4: 172.22.129.73
       ipv6: fdb2:e864:673e::53
-  looking_glass:
-    clearnet:
-      hostname: lg.tatk.network
-      url: https://lg.tatk.network/
-    dn42:
-      hostname: lg.tatk.dn42
-      url: https://lg.tatk.dn42
   recursive_dns:
     dn42:
       hostname: dns.tatk.dn42
       ipv4: 172.22.129.74
       ipv6: fdb2:e864:673e::5353
-  status_page:
-    clearnet:
-      hostname: status.tatk.network
-      url: https://status.tatk.network/
-    dn42:
-      hostname: status.tatk.dn42
-      url: https://status.tatk.dn42

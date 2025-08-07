@@ -25,9 +25,9 @@
 
     <br />
 
-    <div class="node-table">
+    <div class="node-table" align="center">
 
-        <table class="table table-bordered table-striped table-hover" id="peerTable">
+        <table class="table table-bordered table-striped table-hover" style="width: 80%;" id="peerTable">
             <thead>
                 <tr>
                     <th scope="col">Node ID</th>
@@ -40,39 +40,41 @@
                 </tr>
             </thead>
             <tbody>
-                {{ range $host, $data := .Site.Data.config.hosts }}
+                {{- $regionsSlice := slice -}}
+                {{- range $key, $value := .Site.Data.config.regions }}
+                {{- $regionsSlice = $regionsSlice | append (dict "Key" $key "Value" $value) -}}
+                {{- end }}
+                
+                {{- $sortedRegions := sort $regionsSlice "Value.sort" "asc" -}}
+                
+                {{- range $regionEntry := $sortedRegions }}
+                {{- $region := $regionEntry.Key -}}
+                {{- $hosts := $regionEntry.Value.hosts -}}
+                
+                {{- $hostSlice := slice -}}
+                {{- range $host, $data := $hosts }}
+                {{- $hostSlice = $hostSlice | append (dict "name" $host "data" $data) -}}
+                {{- end }}
+                
+                {{- $sortedHosts := sort $hostSlice "name" "asc" -}}
+                
+                {{- range $hostEntry := $sortedHosts }}
+                {{- $host := $hostEntry.name -}}
+                {{- $data := $hostEntry.data -}}
+                
                 <tr id="{{ $host }}" class="node">
                     <th scope="row"><a href="/nodes#{{ $host }}">{{ $host }}</a></th>
-                    <td>{{ .hostname }}</td>
-                    <td>{{ .location }}</td>
+                    <td>{{ $data.hostname }}</td>
+                    <td>{{ $data.location }}</td>
                     <td></td>
-                    <td>
-                        {{if .wg_public_key }}
-                        <span class="badge badge-pill badge-info">Wireguard</span>
-                        {{ end }}
-                        {{if .openvpn }}
-                        <span class="badge badge-pill badge-secondary">OpenVPN</span>
-                        {{ end }}
-                        {{if .gre }}
-                        <span class="badge badge-pill badge-primary">GRE</span>
-                        {{ end }}
-                    </td>
-                    <td>
-                        {{ if eq .peering.policy "open" }}
-                        <span class="badge badge-pill badge-success">Open</span>
-                        {{ else if eq .peering.policy "closed" }}
-                        <span class="badge badge-pill badge-danger">Closed</span>
-                        {{ end}}
-                    </td>
-                    <td>
-                        {{ if eq .peering.method "manual" }}
-                        <a class="badge badge-pill badge-warning" href="/contact">Manual, please get in touch</a>
-                        {{ else if eq .peering.method "auto" }}
-                        <a class="badge badge-pill badge-info">Auto</a>
-                        {{ end}}
-                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
-                {{ end }}
+                
+                {{- end }}
+                
+                {{- end }}
             </tbody>
         </table>
 
@@ -122,11 +124,18 @@
 </script>
 
 <script>
+    const protocolClassMap = {
+        wireguard: "badge-info",
+        openvpn: "badge-secondary",
+        default: "badge-primary"
+    };
+    
     var xmlHttp = new XMLHttpRequest();
     var table = document.getElementById('peerTable');
     var rows = table.getElementsByClassName("node");
 
     for (var i = 0; i < rows.length; i++) {
+        console.log("Fetching data for row " + i + ": " + rows[i].children[1].innerText);
         var url = "https://" + rows[i].children[1].innerText + "/api/meta/info";
         try {
             xmlHttp.open("GET", url, false);
@@ -134,7 +143,61 @@
 
             if (xmlHttp.status === 200) {
                 var response = JSON.parse(xmlHttp.responseText);
+
+                // Fill current peers / peer limit
                 rows[i].children[3].innerText = response.current_peers + " / " + response.peer_limit;
+
+                // Add enabled protocol pills to the 5th column (index 4)
+                var protocolCell = rows[i].children[4];
+                protocolCell.innerHTML = ""; // Clear previous content if any
+
+                for (var protocol in response.protocols) {
+                    if (response.protocols[protocol].enabled) {
+                        var badgeClass = protocolClassMap[protocol] || protocolClassMap.default;
+                        var span = document.createElement("span");
+                        span.className = "badge " + badgeClass + " rounded-pill me-1";
+                        span.textContent = protocol.charAt(0).toUpperCase() + protocol.slice(1);
+                        protocolCell.appendChild(span);
+                    }
+                }
+
+                // Add peering status pills to the 6th column (index 5)
+                var statusCell = rows[i].children[5];
+                statusCell.innerHTML = ""; // Clear previous content if any
+
+                if (response.peering_policy = "Open") {
+                    var span = document.createElement("span");
+                    span.className = "badge badge-success rounded-pill me-1";
+                    span.textContent = "Open";
+                    statusCell.appendChild(span);
+                } else if (response.peering_policy = "Closed") {
+                    var span = document.createElement("span");
+                    span.className = "badge badge-danger rounded-pill me-1";
+                    span.textContent = "Closed";
+                    statusCell.appendChild(span);
+                } else {
+                    console.warn("Unknown peering policy for " + rows[i].children[1].innerText + ": " + response.peering_policy);
+                }
+
+                // Add peering method pills to the 7th column (index 6)
+                var methodCell = rows[i].children[6];
+                methodCell.innerHTML = ""; // Clear previous content if any
+
+                if (response.peering_method = "Manual") {
+                    var span = document.createElement("a");
+                    span.className = "badge badge-warning rounded-pill me-1";
+                    span.textContent = "Manual, please get in touch";
+                    span.href = "/contact";
+                    methodCell.appendChild(span);
+                } else if (response.peering_method = "Automatic") {
+                    var span = document.createElement("a");
+                    span.className = "badge badge-success rounded-pill me-1";
+                    span.textContent = "Automatic";
+                    methodCell.appendChild(span);
+                } else {
+                    console.warn("Unknown peering method for " + rows[i].children[1].innerText + ": " + response.peering_method);
+                }
+
             } else {
                 console.error("Failed to fetch data for " + url + ": Status " + xmlHttp.status);
                 continue;
@@ -144,5 +207,6 @@
             continue;
         }
     }
+
 </script>
 {{ end }}
